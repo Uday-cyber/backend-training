@@ -3,12 +3,16 @@ import mongoose from "mongoose";
 const noteSchema = new mongoose.Schema({
     title: {
         type: String, 
-        required: true
+        required: true,
+        minlength: 3
     },
     body: {
         type: String,
-        required: true
+        required: true,
+        maxlenght: 500
     }
 }, {timestamps: true});
 
-module.exports = mongoose.model('Note', noteSchema);
+const Note = mongoose.model('Note', noteSchema);
+
+export default Note;
