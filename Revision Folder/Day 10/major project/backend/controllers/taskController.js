@@ -48,7 +48,7 @@ export const updateTask = async (req, res) => {
 
         if(req.file){
             if(task.file){
-                const fullpath = path.resolve(task.file);
+                const fullpath = path.join(process.cwd(), task.file);
                 fs.unlinkSync(fullpath);
             }
             task.file = `/uploads/${req.file.filename}`;
@@ -80,7 +80,7 @@ export const deleteTask = async (req, res) => {
         }
 
         if(task.file){
-            const fullpath = path.resolve(task.file);
+            const fullpath = path.join(process.cwd(), task.file);
             fs.unlinkSync(fullpath);
         }
 

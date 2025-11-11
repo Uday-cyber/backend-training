@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
 .then(() => { console.log('Connected to database')})
 .catch((err) => { console.error('MongoDB is not connected', err)})
 
-app.use('/uploads', express.static(path.resolve('uploads')));
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 app.use('/users', userRoute);
 app.use('/tasks', taskRoute);
