@@ -2,7 +2,6 @@ import express from 'express';
 import { protect } from '../middlewares/auth.js';
 import { createTask, deleteTask, getAllTasks, updateTask } from '../controllers/taskController.js';
 import { upload } from '../middlewares/upload.js';
-import { authorizeRole } from '../middlewares/authorizeRole.js';
 
 const taskRoute = express.Router();
 

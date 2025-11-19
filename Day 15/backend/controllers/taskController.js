@@ -23,7 +23,7 @@ export const createTask = async (req, res) => {
 export const getAllTasks = async (req, res) => {
     try {
         if(req.user.role === "admin"){
-            const tasks = await Task.find().populate("user", "username email");
+            const tasks = await Task.find();
             return res.json(tasks);
         }
 
