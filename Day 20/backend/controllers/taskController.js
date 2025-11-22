@@ -58,7 +58,7 @@ export const getAllTasks = async (req, res) => {
       Task.countDocuments(query),
     ]);
 
-    res.json({
+    res.json({  
       total,
       page: pageNum,
       pages: Math.ceil(total / limitNum),
