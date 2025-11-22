@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 import Task from "../models/Tasks.js";
-import { error } from 'console';
 
 export const createTask = async (req, res) => {
     try{
