@@ -1,7 +1,7 @@
 import { cache } from "../utlis/cache.js";
 
 export const cacheMiddleware = (req, res, next) => {
-    const key = req.originalUrl;
+    const key = req.originalUrl + "_" + req.user._id;
     const cachedData = cache.get(key);
 
     if(cachedData) {
